@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10.0)
+project(HackaTCG VERSION 0.1.0 LANGUAGES C CXX)
+add_executable(HackaTCG src/main.cpp)
+find_package(OpenSSL REQUIRED)
+target_link_libraries(HackaTCG PRIVATE OpenSSL::SSL OpenSSL::Crypto)
