@@ -1,12 +1,16 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include <iostream>
-#include <ctime>
+#include "../include/card.hpp"
+#include "../include/cardpack.hpp"
+
 #include "../include/external/httplib.h"
 #include "../include/external/json.hpp"
 
 int main(int, char**){
     std::cout << "Hello, from HackaTCG!\n";
     httplib::Server svr;
+    htcg::CardPack cardpack;
+
     std::string access_token = "NONE";
 
     const std::string CLIENT_ID = "rkIybDZKGqcoWOA-XNZ9sFLmMbHJpYFXxk7ZOFAx-Is";
@@ -51,6 +55,21 @@ int main(int, char**){
         } else {
             res.set_content("{\"total_seconds\":-1}", "application/json");
         }
+    });
+
+    svr.Get("/openPack", [&cardpack](const httplib::Request &req, httplib::Response &res) {
+        htcg::Card** cards = cardpack.openPack();
+        nlohmann::json cardData;
+
+        for (int i = 0; i < cardpack.cardsPerPack; i++) {
+            cardData.push_back({
+                {"id", cards[i]->identifier},
+                {"art", cards[i]->art},
+                {"attrib", cards[i]->attrib},
+            });
+        }
+        
+        res.set_content(cardData.dump(), "application/json");
     });
 
     if (!svr.set_mount_point("/", "../public")) {

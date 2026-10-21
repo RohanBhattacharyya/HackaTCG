@@ -9,6 +9,7 @@
 <body>
     <h1>HackaTCG!</h1>
     <p>Peak collectibles for programmers.</p>
+    <p>By programming for enough time, you will get a card that is uniquely yours!</p>
     <button onclick="window.open('https://hackatime.hackclub.com/oauth/authorize?client_id=rkIybDZKGqcoWOA-XNZ9sFLmMbHJpYFXxk7ZOFAx-Is&redirect_uri=http://localhost:8080/code&response_type=code&scope=profile+read')">Click Mee! B)</button>
     <button onclick="fetch('http://localhost:8080/getInfo?type=time').then(response =>response.json())
     .then(data => {
@@ -16,5 +17,13 @@
         alert(':> ' + data['total_seconds'])
     }
     )">GET PAST 7 DAY SECONDS!</button>
+
+    <button onclick="fetch('http://localhost:8080/openPack').then(response =>response.json())
+    .then(data => {
+        console.log(data)
+        alert(data)
+    })
+    ">Open Pack</button>
+    
 </body>
 </html>
