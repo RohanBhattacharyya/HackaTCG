@@ -31,8 +31,8 @@ namespace htcg {
         public:
             const int cardsPerPack = 5;
         private:
-            const double shinyProb = 0.01;
-            const double platedProb = 0.0001;
+            const double shinyProb = 0.1;
+            const double platedProb = 0.01;
             int mintedCards = 0;
     };
 }

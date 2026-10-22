@@ -64,6 +64,7 @@ int main(int, char**){
         for (int i = 0; i < cardpack.cardsPerPack; i++) {
             cardData.push_back({
                 {"id", cards[i]->identifier},
+                {"name", htcg::getName(cards[i]->art)},
                 {"art", cards[i]->art},
                 {"attrib", cards[i]->attrib},
             });

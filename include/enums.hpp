@@ -1,9 +1,10 @@
+#include <string>
 namespace htcg {
     enum Artwork {
-        HACKER,
-        DINO,
-        FOX,
-        ROBOT,
+        RATTICUS,
+        ANGRY,
+        HALO,
+        SAD,
         END_ENUM_ARTWORK
     };
 
@@ -13,4 +14,20 @@ namespace htcg {
         PLATED,
         END_ENUM_SPECIAL
     };
+
+    inline std::string getName(Artwork art) {
+        switch (art) {
+            case RATTICUS:
+                return "Ratticus";
+            case ANGRY:
+                return "A. Ratticus";
+            case HALO:
+                return "H. Ratticus";
+            case SAD:
+                return "S. Ratticus";
+            default:
+                return "error";
+        }
+    }
+
 }

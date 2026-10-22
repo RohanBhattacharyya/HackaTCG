@@ -18,12 +18,21 @@
     }
     )">GET PAST 7 DAY SECONDS!</button>
 
-    <button onclick="fetch('http://localhost:8080/openPack').then(response =>response.json())
-    .then(data => {
-        console.log(data)
-        alert(data)
-    })
-    ">Open Pack</button>
-    
+    <button onclick="fetchCards()">Open Pack</button>
+
+    <div class="pack">
+        
+    </div>
+
+    <!-- <div class="card blue plated">
+        <span>
+            <h2>Ratticus</h2>
+            <h3>100/100</h3>
+        </span>
+        <img src="images/artwork/0.png">
+        <p>Ratticus is the op. He will take your rent, whether your want or not.</p>
+    </div> -->
+
+    <script src="cardSpawner.js"></script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Tambyon;
+    src: url("fonts/Tambyon.otf") format("opentype");
+}
+
 body {
     font-family: sans-serif;
     font-weight: 900;
@@ -17,4 +22,66 @@ button {
     margin: 5px;
     padding: 10px;
     font-size: large;
+}
+
+.card {
+    font-family: Tambyon;
+    max-width: 10rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-radius: 10px;
+    border-color: rgb(246, 255, 0);
+    border-width: 7px;
+    border-style: solid;
+    clear: both;
+    margin: 5px;
+}
+
+.card h2 {
+    font-size: 20px;
+    float: left;
+}
+
+.card h3 {
+    font-size: 15px;
+    float: right;
+}
+
+.card img {
+    max-width: 10rem;
+    align-content: center;
+    border-radius: 5px;
+}
+
+.shiny {
+    box-shadow: 0px 0px 40px 20px #dbff10;
+}
+
+.green {
+    background-color: rgb(133, 248, 108);
+}
+
+.blue {
+    background-color: rgb(108, 229, 248);
+}
+
+.red {
+    background-color: rgb(248, 108, 108);
+}
+
+.purple {
+    background-color: rgb(141, 108, 248);
+}
+
+.pack {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plated {
+    filter: hue-rotate(90deg);
+    color: white;
+    box-shadow: 0px 0px 40px 20px #dbff10;
 }
